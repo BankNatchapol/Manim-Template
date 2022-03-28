@@ -2,13 +2,13 @@
 ## Run command 
 High quality
 ```
-manim -pqh test.py Introduction
+manim -pqh <file path> <class object name>
 ```
 Medium quality
 ```
-manim -pqm test.py Introduction
+manim -pqm <file path> <class object name>
 ```
 Low quality
 ```
-manim -pql test.py Introduction
+manim -pql <file path> <class object name>
 ```
