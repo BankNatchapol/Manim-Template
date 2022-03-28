@@ -61,3 +61,4 @@ class ParameterShiftRule(Scene):
         self.wait()
         self.play(k.animate.set_value(1.2), run_time=5, rate_func=linear)
         self.wait()
+        
