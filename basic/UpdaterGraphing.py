@@ -1,6 +1,6 @@
 from manim import *
 
-class Graphing(Scene):
+class UpdaterGraphing(Scene):
     def construct(self):
 
         k = ValueTracker(-4)
@@ -14,7 +14,7 @@ class Graphing(Scene):
         func = ax.plot(lambda x: x**2, x_range=[-4,4], color=BLUE)
 
         slope = always_redraw(
-            lambda: ax.get_scant_slope_group(
+            lambda: ax.get_secant_slope_group(
                 x=k.get_value(),
                 graph=func,
                 dx=0.01,
