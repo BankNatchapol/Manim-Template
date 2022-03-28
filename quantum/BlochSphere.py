@@ -17,29 +17,31 @@ def get_spherical_coordinates(statevector):
     y = r*np.sin(theta)*np.sin(phi)
     z = r*np.cos(theta)
     return [x, y, z]
-    
+
+#Manim Example | How to Show Sphere in Manim 
 class BlochSphere(ThreeDScene):
     CONFIG = {
           "x_axis_label": "$x$",
           "y_axis_label": "$y$",
+          "z_axis_label": "$z$",
+          "basis_i_color": GREEN,
+          "basis_j_color": RED,
+          "basis_k_color": GOLD
     }
-
+    
     def construct(self):
+        H_AXIS: np.ndarray = np.array((np.sin(np.pi/4), 0, np.cos(np.pi/4)))
 
         ### calculate state
         start_state = np.array([1, 0])
-        # y gate
-        # gate = np.array([[0, -complex(0,1)],
-        #                 [complex(0,1), 0]])
-        
-        # rz(pi/2) gate
-        # gate = np.array([[np.exp(-complex(0,1)*np.pi/4), 0],
-        #                 [0, np.exp(complex(0,1)*np.pi/4)]])
-
-        # hadamard gate
         gate = (1/np.sqrt(2))*np.array([[1, 1],
                                         [1, -1]])
         target_state = start_state@gate
+        gate = np.array([[np.exp(-complex(0,1)*np.pi/4), 0],
+                        [0, np.exp(complex(0,1)*np.pi/4)]])
+        target_state = target_state@gate
+        
+        
 
         ###
 
@@ -61,5 +63,6 @@ class BlochSphere(ThreeDScene):
         target_vector = Vector(v2, color=RED)
         self.add(axes, labelz, sphere, v1)
         self.wait()
-        self.play(Transform(v1, target_vector), run_time=3)
+        #self.play(Transform(v1, target_vector), run_time=3)
+        self.play(v1.animate.rotate_about_origin(180*DEGREES, H_AXIS), run_time=3)
         self.wait()
