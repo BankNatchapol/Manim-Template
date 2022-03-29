@@ -32,3 +32,4 @@ class UpdaterGraphing(Scene):
         self.add(ax, func, slope, pt)
         self.wait()
         self.play(k.animate.set_value(4), run_time=3)
+        self.clear()

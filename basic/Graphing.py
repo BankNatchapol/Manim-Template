@@ -25,3 +25,4 @@ class Graphing(Scene):
         self.wait()
         self.play(Create(area))
         self.wait(2)
+        self.clear()

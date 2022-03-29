@@ -66,3 +66,4 @@ class BlochSphere(ThreeDScene):
         #self.play(Transform(v1, target_vector), run_time=3)
         self.play(v1.animate.rotate_about_origin(180*DEGREES, H_AXIS), run_time=3)
         self.wait()
+        self.clear()

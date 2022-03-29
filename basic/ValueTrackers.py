@@ -12,3 +12,4 @@ class ValueTrackers(Scene):
        
         self.play(k.animate.set_value(10), run_time=10, rate_func=linear)
         self.wait(1)
+        self.clear()

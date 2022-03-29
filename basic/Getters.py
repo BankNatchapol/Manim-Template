@@ -15,3 +15,4 @@ class Getters(Scene):
         self.wait(1.0)
         self.play(rect.animate.to_edge(UR))
         self.wait(1.0)
+        self.clear()

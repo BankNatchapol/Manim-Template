@@ -17,3 +17,4 @@ class AnimateObject(Scene):
         self.play(sq.animate.scale(2), tri.animate.to_edge(DL), run_time=3)
 
         self.wait(1.0)
+        self.clear()

@@ -8,3 +8,4 @@ class Introduction(Scene):
         self.play(Write(name))
         self.play(Create(box))
         self.wait(2.0)
+        self.clear()

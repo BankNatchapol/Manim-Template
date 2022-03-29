@@ -12,4 +12,5 @@ class Images(Scene):
         im.height = 5
         im.width = 5
         self.play(DrawBorderThenFill(icon), FadeIn(im))
-        self.wait(3.0)        
+        self.wait(3.0) 
+        self.clear()       
